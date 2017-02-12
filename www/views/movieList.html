@@ -1,0 +1,17 @@
+<ion-view>
+  <ion-nav-title>Movie Search</ion-nav-title>
+  <ion-content>
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search movie..." ng-model="movie.title" ng-change="searchMovie()">
+  </label>
+  <ion-list>
+    <a ng-repeat="movie in movies" class="item item-thumbnail-left" ui-sref="MovieShow({movieId: movie.id, movieData: movie})">
+      <img ng-if="!movie.poster_path" ng-src="http://www.sicily-hotels.it/img/imageNotFound400.jpg" />
+      <img ng-if="movie.poster_path" ng-src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+      <h2>{{movie.title}}</h2>
+      <h4>{{movie.release_date}}</h4>
+    </a>
+  </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view>
+  <ion-nav-title>{{movie.original_title}}</ion-nav-title>
+  <ion-content>
+    <div class="list card">
+      <div class="item item-image">
+        <img ng-if="!movie.poster_path" ng-src="http://www.sicily-hotels.it/img/imageNotFound400.jpg" />
+        <img ng-if="movie.poster_path" ng-src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+      </div>
+      <div class="item item-text-wrap">
+        <h2>{{movie.release_date}}</h2>
+        <p>{{movie.overview}}</p>
+      </div>
+      <div class="item">
+        Rate: <strong>{{movie.vote_average}}</strong>
+        Votes: {{movie.vote_count}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
